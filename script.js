@@ -17,7 +17,7 @@ switch (seleccionarEjercicio) {
         ejercicio5();
         break;
     default:
-        alert("El número ingresado debe ser entre 1 y 5");
+        alert("El número ingresado debe ser entre 1 y 5.\nReintente nuevamente.");
         document.location.reload(false);
 }
 
@@ -37,7 +37,7 @@ function ejercicio2() {
     const color = "blanco";
 
     respuestaColorDelCaballo.toLowerCase() == color.toLowerCase()
-        ? alert("Respuesta correcta! \nEl caballo blanco de Napoleón es blanco")
+        ? alert("Respuesta correcta! \nEl caballo blanco de Napoleón es blanco.")
         : ejercicio2();
 }
 //3
@@ -48,30 +48,31 @@ function ejercicio3() {
 
     let promedioFinal = (promedioMate + promedioFisi + promedioCiencias) / 3;
     let promedioFinalAproximado = Math.round(promedioFinal);
-    alert(`El promedio final de notas es: ${promedioFinalAproximado}`);
+    alert(`Las notas ingresadas fueron: \nMatemáticas: ${promedioMate} \nFísica: ${promedioFisi} \nCiencias: ${promedioCiencias} \nEl promedio final de notas es: ${promedioFinalAproximado}`);
 }
 
 //4
 function ejercicio4() {
-    let cantidad = [1,2,3];
+    let cantidad = [1, 2, 3];
     let frutas = [];
-    
+
     cantidad.forEach(() => {
         let fruta = prompt("Por favor, escribe el nombre de una fruta");
         frutas.push(fruta);
     });
 
     frutas.forEach(f => {
-        if (f !== "manzana"){
-            console.log(f);4
+        if (f !== "manzana") {
+            console.log(f); 4
         }
     });
 }
 
 //5
 function ejercicio5() {
-    let nombre = prompt("Escriba su nombre por favor");
-    let vocales = ["a", "e", "i", "o", "u"];
+    let inputNombre = prompt("Escriba su nombre por favor");
+    let nombre = inputNombre.toLowerCase();
+    let vocales = ["a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú"];
     let nombre2 = nombre.split("");
     let cantidadVocales = 0;
     let cantidadConsonantes = 0;
@@ -79,6 +80,6 @@ function ejercicio5() {
     nombre2.forEach(letra => {
         vocales.includes(letra) ? cantidadVocales++ : cantidadConsonantes++;
     });
-    console.log(`Cantidad de vocales en "${nombre}" = ${cantidadVocales}`);
-    console.log(`Cantidad de consonantes en "${nombre}" = ${cantidadConsonantes}`);
+    console.log(`Cantidad de vocales en "${inputNombre}" \n= ${cantidadVocales}`);
+    console.log(`Cantidad de consonantes en "${inputNombre}" \n= ${cantidadConsonantes}`);
 }

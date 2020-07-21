@@ -83,3 +83,5 @@ function ejercicio5() {
     console.log(`Cantidad de vocales en "${inputNombre}" \n= ${cantidadVocales}`);
     console.log(`Cantidad de consonantes en "${inputNombre}" \n= ${cantidadConsonantes}`);
 }
+
+//Sebastián Segura Osorio - github.com/sebsegoso

@@ -18,14 +18,18 @@ switch (seleccionarEjercicio) {
         break;
     default:
         alert("El número ingresado debe ser entre 1 y 5");
-        window.location.reload(false);
+        document.location.reload(false);
 }
 
 //1
 function ejercicio1() {
     let numeroDel1Al100 = +prompt("Ejercicio N°1: \nIngrese un número del 1 al 100");
-    for (i = 0; i <= numeroDel1Al100; i++) console.log(i);
+    if (numeroDel1Al100 > 100 || numeroDel1Al100 < 1) {
+        alert("El número debe ser entre 1 y 100. \nReintente nuevamente.");
+        ejercicio1();
+    }
 
+    for (i = 0; i <= numeroDel1Al100; i++) console.log(i);
 }
 //2
 function ejercicio2() {
@@ -71,7 +75,7 @@ function ejercicio5() {
     let nombre2 = nombre.split("");
     let cantidadVocales = 0;
     let cantidadConsonantes = 0;
-    
+
     nombre2.forEach(letra => {
         vocales.includes(letra) ? cantidadVocales++ : cantidadConsonantes++;
     });
